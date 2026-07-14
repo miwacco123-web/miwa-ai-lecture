@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>内田 美和｜プロフィール &amp; AI講座</title>
+<meta name="description" content="現場30年・5,500組。脳科学×先生ママの実践者、内田美和のプロフィール／AI講座。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FFFFFF;--ink:#1A1A16;--ink-soft:#6A675C;
+    --pine:#1F4A38;--pine-2:#2E6B4F;--kaki:#BF6440;
+    --photo:#F1EFE7;--line:#E7E4DB;--line-soft:#F0EEE7;
+    --mincho:"Zen Old Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif;--latin:"Fraunces",Georgia,serif;
+    --head-h:66px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  ::selection{background:var(--pine);color:#fff;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 40px;width:100%;}
+  @media(max-width:640px){.wrap{padding:0 22px;}}
+
+  /* header / tabs */
+  header.top{position:sticky;top:0;z-index:60;height:var(--head-h);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 40px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  @media(max-width:640px){header.top{padding:0 16px;}}
+  .brand{font-family:var(--mincho);font-weight:700;font-size:1rem;letter-spacing:.05em;white-space:nowrap;}
+  .brand b{color:var(--pine);}
+  .tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{border:none;background:none;cursor:pointer;white-space:nowrap;font-family:var(--sans);font-size:.83rem;color:var(--ink-soft);letter-spacing:.02em;padding:10px 12px;position:relative;transition:color .2s;}
+  .tab .en{display:block;font-family:var(--latin);font-style:italic;font-size:.58rem;letter-spacing:.1em;color:var(--kaki);opacity:0;transition:opacity .2s;margin-top:1px;}
+  .tab:hover{color:var(--ink);}
+  .tab[aria-selected="true"]{color:var(--pine);font-weight:700;}
+  .tab[aria-selected="true"] .en{opacity:1;}
+  .tab[aria-selected="true"]::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:var(--pine);}
+  .tab.lec[aria-selected="true"]{color:var(--kaki);}
+  .tab.lec[aria-selected="true"]::after{background:var(--kaki);}
+  @media(max-width:900px){.brand{font-size:.85rem;}.tab{font-size:.74rem;padding:8px 7px;}.tab .en{display:none;}}
+
+  /* panels */
+  .panel{display:none;min-height:calc(100vh - var(--head-h));padding:56px 0 96px;}
+  .panel.active{display:block;animation:fade .5s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .idx{font-family:var(--latin);font-style:italic;font-size:.9rem;color:var(--kaki);margin:0 0 6px;}
+  .eyebrow{font-family:var(--latin);font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pine);margin:0 0 18px;}
+  .sec-title{font-family:var(--mincho);font-weight:600;font-size:clamp(1.55rem,4vw,2.4rem);line-height:1.4;letter-spacing:.03em;margin:0 0 30px;}
+  .block{padding-top:44px;margin-top:44px;border-top:1px solid var(--line);}
+
+  /* HOME */
+  .home{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center;}
+  @media(max-width:860px){.home{grid-template-columns:1fr;gap:30px;}}
+  .home .kicker{font-family:var(--latin);font-size:.82rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pine);}
+  .home h1{font-family:var(--mincho);font-weight:900;font-size:clamp(2.7rem,7.5vw,4.6rem);line-height:1.06;letter-spacing:.06em;margin:16px 0 8px;}
+  .home .romaji{font-family:var(--latin);font-style:italic;font-size:1.02rem;color:var(--ink-soft);letter-spacing:.06em;}
+  .home .role{font-size:.93rem;color:var(--pine);margin:20px 0 0;line-height:1.9;}
+  .home .lead{color:var(--ink-soft);font-size:.94rem;margin:16px 0 0;max-width:40ch;}
+  .home .lead b{color:var(--pine);}
+  .home-photo{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--photo);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;}
+  .home-photo img{width:100%;height:100%;object-fit:cover;}
+  .home-photo .ph{font-family:var(--latin);font-size:.8rem;color:var(--ink-soft);text-align:center;padding:0 16px;}
+  .home-photo::before{content:"MIWA UCHIDA";position:absolute;left:14px;bottom:12px;font-family:var(--latin);font-style:italic;font-size:.72rem;color:var(--pine);background:rgba(255,255,255,.78);padding:3px 10px;border-radius:100px;}
+  .ledger{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:44px;}
+  @media(max-width:520px){.ledger{grid-template-columns:repeat(2,1fr);}}
+  .ledger .cell{padding:20px 6px;border-right:1px solid var(--line);}
+  .ledger .cell:last-child{border-right:none;}
+  @media(max-width:520px){.ledger .cell:nth-child(2n){border-right:none;}.ledger .cell:nth-child(1),.ledger .cell:nth-child(2){border-bottom:1px solid var(--line);}}
+  .ledger .num{font-family:var(--mincho);font-weight:900;font-size:1.9rem;line-height:1;color:var(--pine);}
+  .ledger .num small{font-size:.88rem;margin-left:2px;}
+  .ledger .lbl{font-family:var(--latin);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;}
+  .reach{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);margin-bottom:22px;}
+  @media(max-width:520px){.reach{grid-template-columns:1fr;}}
+  .reach .rc{padding:22px;border-right:1px solid var(--line);}
+  .reach .rc:last-child{border-right:none;}
+  @media(max-width:520px){.reach .rc{border-right:none;border-bottom:1px solid var(--line);}.reach .rc:last-child{border-bottom:none;}}
+  .reach .big{font-family:var(--mincho);font-weight:900;font-size:1.9rem;color:var(--pine);line-height:1;}
+  .reach .cap{font-size:.8rem;color:var(--ink-soft);margin-top:8px;}
+  .sns{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  @media(max-width:640px){.sns{grid-template-columns:1fr;}}
+  .sns a{text-decoration:none;padding:16px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px;transition:.2s;}
+  .sns a:hover{background:var(--line-soft);color:var(--pine);}
+  .sns .name{font-family:var(--mincho);font-weight:600;font-size:1rem;}
+  .sns .handle{font-family:var(--latin);font-style:italic;font-size:.76rem;color:var(--ink-soft);}
+  .sns .arrow{margin-left:auto;font-family:var(--latin);color:var(--kaki);}
+
+  /* profile */
+  .prof{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;}
+  @media(max-width:820px){.prof{grid-template-columns:1fr;gap:26px;}}
+  .prof-photo{aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:var(--photo);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+  .prof-photo img{width:100%;height:100%;object-fit:cover;}
+  .prof-photo .ph{font-family:var(--latin);font-size:.74rem;color:var(--ink-soft);text-align:center;padding:0 12px;}
+  .bio p{margin:0 0 16px;font-size:.96rem;color:#2f2e27;max-width:62ch;}
+  .bio p:first-child{font-family:var(--mincho);font-size:1.1rem;line-height:1.85;}
+  .bio b{color:var(--pine);}
+  .cred{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line);}
+  @media(max-width:560px){.cred{grid-template-columns:1fr;}}
+  .cred h4{font-family:var(--latin);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--kaki);margin:0 0 6px;grid-column:1 / -1;}
+  .cred ul{list-style:none;margin:0;padding:0;}
+  .cred li{font-size:.86rem;padding:4px 0;color:#3a392f;display:flex;gap:8px;}
+  .cred li::before{content:"—";color:var(--pine);}
+
+  /* faq */
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq details:first-of-type{border-top:1px solid var(--line);}
+  .faq summary{cursor:pointer;list-style:none;padding:18px 44px 18px 0;position:relative;font-family:var(--mincho);font-weight:600;font-size:1.05rem;line-height:1.6;transition:color .2s;}
+  .faq summary:hover{color:var(--pine);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"";position:absolute;right:6px;top:26px;width:11px;height:11px;border-right:1.5px solid var(--pine);border-bottom:1.5px solid var(--pine);transform:rotate(45deg);transition:transform .3s;}
+  .faq details[open] summary::after{transform:rotate(-135deg);}
+  .faq .qmark{font-family:var(--latin);font-style:italic;color:var(--kaki);margin-right:10px;}
+  .faq .ans{padding:0 44px 22px 0;color:#3a392f;font-size:.94rem;max-width:66ch;}
+
+  /* programs */
+  .prog{display:grid;grid-template-columns:120px 130px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center;}
+  .prog:last-child{border-bottom:none;}
+  @media(max-width:820px){.prog{grid-template-columns:100px 1fr;gap:18px;}}
+  @media(max-width:560px){.prog{grid-template-columns:1fr;gap:10px;}}
+  .prog-photo{aspect-ratio:1;border-radius:4px;overflow:hidden;background:var(--photo);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+  .prog-photo .ph{font-family:var(--latin);font-size:.62rem;color:var(--ink-soft);}
+  @media(max-width:820px){.prog-head{grid-column:1 / -1;}}
+  .prog .tag{font-family:var(--latin);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--kaki);}
+  .prog h3{font-family:var(--mincho);font-weight:700;font-size:1.3rem;letter-spacing:.05em;margin:5px 0 0;}
+  .prog .meta{font-family:var(--latin);font-style:italic;font-size:.78rem;color:var(--ink-soft);margin-top:4px;}
+  .prog p{margin:0 0 9px;font-size:.9rem;color:#33322b;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:.72rem;background:var(--line-soft);color:var(--pine);padding:4px 10px;border-radius:100px;}
+
+  /* LECTURE */
+  .lec-kicker{font-family:var(--latin);font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--kaki);margin:0 0 14px;}
+  .lec-kicker{display:flex;align-items:center;gap:14px;}
+  .lec-kicker::after{content:"";width:72px;height:1px;background:var(--kaki);}
+  .lec-title{font-family:var(--mincho);font-weight:700;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.3;letter-spacing:.04em;margin:0 0 20px;}
+  .lec-lead{font-family:var(--mincho);font-size:clamp(1.05rem,2.4vw,1.35rem);line-height:1.9;color:#2f2e27;max-width:54ch;margin:0 0 40px;}
+  .lec-lead b{color:var(--pine);}
+  .lcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:820px){.lcards{grid-template-columns:1fr;gap:14px;}}
+  .lcard{border:1px solid var(--line);border-radius:6px;padding:24px 22px 20px;background:#fff;cursor:pointer;transition:.2s;display:flex;flex-direction:column;}
+  .lcard:hover{border-color:var(--kaki);transform:translateY(-3px);box-shadow:0 12px 30px -18px rgba(26,26,22,.4);}
+  .lcard .n{font-family:var(--latin);font-style:italic;font-size:.9rem;color:var(--kaki);}
+  .lcard h4{font-family:var(--mincho);font-weight:700;font-size:1.2rem;letter-spacing:.03em;margin:8px 0 10px;}
+  .lcard p{margin:0 0 16px;font-size:.9rem;color:#44433a;line-height:1.85;}
+  .lcard .tap{margin-top:auto;font-size:.76rem;color:var(--kaki);font-weight:700;display:flex;align-items:center;gap:5px;}
+  .lcard .tap::after{content:"↗";font-family:var(--latin);}
+  .lnote{margin-top:28px;padding:18px 22px;background:var(--line-soft);border-radius:6px;font-size:.9rem;color:#3a392f;}
+  .lnote b{color:var(--pine);font-family:var(--mincho);}
+  .manifesto{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin:-8px 0 34px;padding:20px 0;border-top:1px solid var(--pine);border-bottom:1px solid var(--line);}
+  .manifesto .mark{font-family:var(--latin);font-style:italic;font-size:2.8rem;line-height:1;color:var(--kaki);}
+  .manifesto p{font-family:var(--mincho);font-size:clamp(1.08rem,2.1vw,1.45rem);line-height:1.75;margin:0;max-width:34ch;}
+  .manifesto small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;color:var(--ink-soft);margin-top:7px;}
+  .grow-grid{grid-template-columns:repeat(2,1fr);gap:0;counter-reset:feature;}
+  .grow-grid .lcard{min-height:230px;padding:26px 32px 24px 0;}
+  .grow-grid .lcard:nth-child(even){padding-left:32px;border-left:1px solid var(--line);}
+  .grow-grid .lcard:nth-child(n+3){border-top:1px solid var(--line);}
+  .grow-grid .lcard:nth-child(3){border-left:0;}
+  .grow-grid .lcard h4{font-size:1.34rem;}
+
+  /* MODAL */
+  .modal{position:fixed;inset:0;z-index:100;display:none;}
+  .modal.open{display:block;}
+  .modal-bg{position:absolute;inset:0;background:rgba(20,19,15,.5);backdrop-filter:blur(3px);animation:fade .25s ease;}
+  .modal-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(680px,92vw);max-height:88vh;overflow-y:auto;background:#fff;border-radius:10px;padding:38px 40px 34px;box-shadow:0 30px 80px -20px rgba(20,19,15,.5);animation:pop .3s cubic-bezier(.2,.7,.2,1);}
+  @media(max-width:640px){.modal-card{padding:30px 24px 26px;}}
+  @keyframes pop{from{opacity:0;transform:translate(-50%,-46%) scale(.97);}to{opacity:1;transform:translate(-50%,-50%) scale(1);}}
+  .modal-x{position:absolute;right:18px;top:16px;width:34px;height:34px;border:1px solid var(--line);background:#fff;border-radius:50%;font-size:1.1rem;color:var(--ink-soft);cursor:pointer;line-height:1;transition:.2s;}
+  .modal-x:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .m-kicker{font-family:var(--latin);font-style:italic;font-size:.82rem;color:var(--kaki);margin:0 0 4px;}
+  .m-title{font-family:var(--mincho);font-weight:700;font-size:1.5rem;letter-spacing:.03em;margin:0 0 16px;}
+  .m-body{font-size:.95rem;color:#33322b;line-height:1.95;margin:0 0 22px;}
+  .m-fig{margin:0 0 24px;border:1px solid var(--line);border-radius:8px;padding:16px;background:#FCFBF8;}
+  .m-fig svg{display:block;width:100%;height:auto;}
+  .m-plabel{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+  .m-plabel span{font-family:var(--latin);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);}
+  .m-copy{font-family:var(--sans);font-size:.8rem;font-weight:700;color:#fff;background:var(--pine);border:none;border-radius:100px;padding:7px 16px;cursor:pointer;transition:.2s;}
+  .m-copy:hover{background:var(--pine-2);}
+  .m-copy.done{background:var(--kaki);}
+  .m-prompt{white-space:pre-wrap;font-family:var(--sans);font-size:.9rem;line-height:1.85;color:#2f2e27;background:var(--line-soft);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:0;}
+  .m-hint{font-size:.8rem;color:var(--ink-soft);margin:12px 0 0;}
+  .m-hint b{color:var(--kaki);}
+
+  /* slide nav */
+  .counter{position:fixed;right:22px;bottom:18px;z-index:40;font-family:var(--latin);font-style:italic;font-size:.8rem;color:var(--ink-soft);background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:100px;}
+  .arrows{position:fixed;right:22px;bottom:56px;z-index:40;display:flex;gap:6px;}
+  .arrows button{width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer;font-size:1rem;color:var(--pine);transition:.2s;}
+  .arrows button:hover{background:var(--pine);color:#fff;border-color:var(--pine);}
+  @media(max-width:640px){.arrows{display:none;}}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}
+  :focus-visible{outline:2px solid var(--pine);outline-offset:2px;}
+
+  /* editorial polish */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(90deg,transparent calc(50% - .5px),rgba(31,74,56,.035) 50%,transparent calc(50% + .5px));}
+  .panel>.wrap{position:relative;}
+  .panel>.wrap::after{content:"UCHIDA MIWA — EDUCATION / AI";position:absolute;right:0;top:0;writing-mode:vertical-rl;font-family:var(--latin);font-style:italic;font-size:.58rem;letter-spacing:.17em;color:#b5b0a4;transform:translateX(30px);}
+  .home h1,.lec-title,.sec-title{text-wrap:balance;}
+  .brand::after{content:"SPECIAL ISSUE · EDUCATION × AI";display:block;font:italic .54rem var(--latin);letter-spacing:.13em;color:var(--kaki);margin-top:-3px;}
+  .home h1{position:relative;}
+  .home h1::after{content:"";display:block;width:64px;height:3px;background:var(--kaki);margin-top:22px;}
+  .home-photo{box-shadow:24px 24px 0 var(--line-soft);}
+  .home-photo::after{content:"01";position:absolute;right:14px;top:10px;font-family:var(--latin);font-style:italic;color:rgba(31,74,56,.48);font-size:1.8rem;}
+  .lec-title{max-width:18ch;}
+  .panel[id^="ai"] .wrap::before,#grow .wrap::before{content:attr(data-part);position:absolute;right:12px;top:-54px;font-family:var(--latin);font-style:italic;font-size:clamp(7rem,18vw,13rem);line-height:1;color:rgba(31,74,56,.045);pointer-events:none;}
+  .lcard{border-width:0 0 1px 0;border-radius:0;padding:26px 18px 24px 0;position:relative;box-shadow:none;}
+  .lcard::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--kaki);transition:width .28s ease;}
+  .lcard:hover{transform:none;box-shadow:none;border-color:var(--line);}
+  .lcard:hover::before,.lcard:focus-visible::before{width:100%;}
+  .lcard+.lcard{padding-left:22px;border-left:1px solid var(--line);}
+  .lnote{border-radius:0;border-left:3px solid var(--pine);padding:19px 24px;}
+  .view-toggle{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--pine);border-radius:100px;padding:7px 12px;font:700 .72rem var(--sans);cursor:pointer;white-space:nowrap;}
+  .view-toggle:hover{border-color:var(--pine);}
+  .progress{position:fixed;left:0;bottom:0;height:2px;background:var(--kaki);z-index:70;width:16.666%;transition:width .3s ease;}
+  .modal-card{border-top:4px solid var(--kaki);}
+
+  /* projection mode: keeps lecture panels on one screen */
+  body.presenting{overflow:hidden;}
+  body.presenting .panel{height:calc(100vh - var(--head-h));min-height:0;padding:clamp(24px,4vh,46px) 0 58px;overflow:auto;}
+  body.presenting .panel.active{display:flex;align-items:center;}
+  body.presenting .panel>.wrap{max-width:1180px;}
+  body.presenting .lec-title{font-size:clamp(2.4rem,5.2vw,4.6rem);margin-bottom:12px;}
+  body.presenting .lec-lead{font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.7;margin-bottom:clamp(20px,3vh,34px);}
+  body.presenting .lcard{padding-top:18px;padding-bottom:16px;}
+  body.presenting .lcard p{line-height:1.65;}
+  body.presenting .lnote{margin-top:20px;padding-top:12px;padding-bottom:12px;}
+  body.presenting .home{gap:7vw;}
+  body.presenting .manifesto{margin-bottom:18px;padding:10px 0;}
+  body.presenting .manifesto .mark{font-size:2.1rem;}
+  body.presenting .manifesto p{font-size:1.08rem;line-height:1.55;}
+  body.presenting .grow-grid .lcard{min-height:0;padding-top:13px;padding-bottom:12px;}
+  body.presenting .grow-grid .lcard h4{margin:4px 0 6px;font-size:1.1rem;}
+  body.presenting .grow-grid .lcard p{margin-bottom:8px;font-size:.82rem;}
+
+  @media(max-width:1080px){
+    .panel>.wrap::after{display:none;}
+    .view-toggle{display:none;}
+  }
+  @media(max-width:820px){
+    body::before{display:none;}
+    .home-photo{box-shadow:12px 12px 0 var(--line-soft);}
+    .lcard+.lcard{padding-left:0;border-left:0;}
+    .grow-grid{grid-template-columns:1fr;}
+    .grow-grid .lcard,.grow-grid .lcard:nth-child(even){min-height:0;padding:22px 0;border-left:0;border-top:1px solid var(--line);}
+    .grow-grid .lcard:first-child{border-top:0;}
+    .manifesto{grid-template-columns:44px 1fr;gap:14px;}
+    .panel[id^="ai"] .wrap::before,#grow .wrap::before{right:22px;top:-28px;font-size:7rem;}
+  }
+  @media(max-width:640px){
+    .panel{padding-top:38px;}
+    .home h1::after{margin-top:16px;}
+    .progress{display:none;}
+    .counter{right:14px;bottom:12px;}
+    .brand::after{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="brand">内田 美和 <b>／</b> SproutUp</div>
+    <nav class="tabs" role="tablist">
+      <button class="tab" role="tab" data-panel="home" aria-selected="true">基本情報<span class="en">Profile</span></button>
+      <button class="tab" role="tab" data-panel="about" aria-selected="false">経歴・教室<span class="en">About</span></button>
+      <button class="tab lec" role="tab" data-panel="ai1" aria-selected="false">親子で楽しむAI<span class="en">AI with Kids</span></button>
+      <button class="tab lec" role="tab" data-panel="ai2" aria-selected="false">AIリテラシー<span class="en">AI Literacy</span></button>
+      <button class="tab lec" role="tab" data-panel="grow" aria-selected="false">育みたい力<span class="en">Skills to Grow</span></button>
+      <button class="tab lec" role="tab" data-panel="ai3" aria-selected="false">家事の時短AI<span class="en">AI at Home</span></button>
+    </nav>
+    <button class="view-toggle" id="view-toggle" type="button" aria-pressed="false" title="講座投影向けに一画面表示へ切り替え">投影モード</button>
+  </header>
+
+  <main>
+    <!-- 1. HOME + 発信 -->
+    <section class="panel active" id="home">
+      <div class="wrap">
+        <div class="home">
+          <div>
+            <p class="kicker">Saitama · Brain-based Early Education</p>
+            <h1>内田 美和</h1>
+            <p class="romaji">Miwa Uchida</p>
+            <p class="role">脳育・知育教室 SproutUp 代表<br />EnglishPlaypark♪ 英語担当 ／ みらいLab サポーター</p>
+            <p class="lead">現場30年・5,500組の親子と歩んできた教育者が、いま自分の教室を <b>AIで動かしている</b>。脳科学 × 先生ママ × コードも書く人。</p>
+          </div>
+          <div class="home-photo"><div class="ph">PHOTO<br />assets/miwa.png</div></div>
+        </div>
+        <div class="ledger">
+          <div class="cell"><div class="num">30<small>年</small></div><div class="lbl">On the Ground</div></div>
+          <div class="cell"><div class="num">5,500<small>組</small></div><div class="lbl">Families</div></div>
+          <div class="cell"><div class="num">3<small>教室</small></div><div class="lbl">In Saitama</div></div>
+          <div class="cell"><div class="num">5<small>+</small></div><div class="lbl">Qualifications</div></div>
+        </div>
+        <div class="block">
+          <p class="eyebrow">Media &amp; Links</p>
+          <div class="reach">
+            <div class="rc"><div class="big">150万</div><div class="cap">Threads 単一投稿の最大インプレッション</div></div>
+            <div class="rc"><div class="big">7,000+</div><div class="cap">Threads フォロワー（@miwa_noiku）</div></div>
+          </div>
+          <div class="sns">
+            <a href="#" target="_blank" rel="noopener"><span class="name">Threads</span><span class="handle">@miwa_noiku</span><span class="arrow">↗</span></a>
+            <a href="#" target="_blank" rel="noopener"><span class="name">note</span><span class="handle">脳育あそび</span><span class="arrow">↗</span></a>
+            <a href="#" target="_blank" rel="noopener"><span class="name">LINE公式</span><span class="handle">ご案内 / 診断</span><span class="arrow">↗</span></a>
+            <a href="#" target="_blank" rel="noopener"><span class="name">Instagram</span><span class="handle">レッスンの様子</span><span class="arrow">↗</span></a>
+            <a href="#" target="_blank" rel="noopener"><span class="name">Substack</span><span class="handle">教育者 / AI向け</span><span class="arrow">↗</span></a>
+            <a href="#" target="_blank" rel="noopener"><span class="name">Ameblo</span><span class="handle">ブログ</span><span class="arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 経歴・教室 -->
+    <section class="panel" id="about">
+      <div class="wrap">
+        <p class="idx">01</p><p class="eyebrow">Profile</p>
+        <h2 class="sec-title">教える人であり、つくる人。</h2>
+        <div class="prof">
+          <div class="prof-photo"><div class="ph">PHOTO<br />レッスン風景など</div></div>
+          <div class="bio">
+            <p>0歳から小学生を対象とした脳育・知育教室 SproutUp の代表。五感を刺激する感覚遊びと知育アクティビティを両輪にした、少人数制のハイブリッド親子教室を、さいたま市内3拠点で主宰しています。</p>
+            <p>私立進学校で6年間の家庭科教員を務めたのち、幼児教育の道へ。<b>栄養士</b>としての離乳食・食育、<b>調理科学の大学院修士</b>で培った指導、<b>ブレインアナリスト</b>としての脳科学に裏づけられた声がけを、一つのカリキュラムに束ねてきました。かつての教え子が、自分の子を連れて来る。その積み重ねが <b>現場30年・5,500組</b> です。</p>
+            <div class="cred">
+              <h4>Qualifications &amp; Career</h4>
+              <ul><li>専修 教員免許状（家庭）</li><li>栄養士 ／ 食育インストラクター</li><li>知育インストラクター</li><li>ブレインアナリスト</li><li>さいたま市教育委員会 認定指導者</li></ul>
+              <ul><li>調理科学 大学院修士 修了</li><li>私立進学校 家庭科教員（6年）</li><li>EnglishPlaypark♪（2001–）</li><li>教育委員会委託 食育講師</li><li>子ども食堂 副代表 ／ みらいLab</li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <p class="idx">02</p><p class="eyebrow">Questions</p>
+          <h2 class="sec-title">よく聞かれること。</h2>
+          <div class="faq">
+            <details open><summary><span class="qmark">Q.</span>なぜ「脳科学 × 子育て」なんですか？</summary><div class="ans">脳の発達段階を知っているだけで、叱り方も、待ち方も、ほめる言葉も変わります。特別なテクニックより"仕組みを知る"ことのほうが、子育てをずっとラクにしてくれる——現場で何度も見てきたからです。</div></details>
+            <details><summary><span class="qmark">Q.</span>栄養や調理の知識も指導に活かせるの？</summary><div class="ans">はい、そこが特色です。離乳食のアドバイスから、食品由来の感覚遊び、小学生の応用調理まで。「食べる・つくる」を科学として扱うと、思考力・表現力・チームワークが自然に育ちます。</div></details>
+            <details><summary><span class="qmark">Q.</span>教室の運営に、AIをどう使っているの？</summary><div class="ans">予約・欠席連絡・カリキュラム管理、LINE配信、SNSコンテンツ制作までを自作の仕組みで自動化。GAS・Make・LINE Messaging API・Claude Code を組み合わせ、いわば"AI従業員チーム"を編成しています。専門職ひとりでも、ここまで回せます。</div></details>
+          </div>
+        </div>
+        <div class="block">
+          <p class="idx">03</p><p class="eyebrow">Programs</p>
+          <h2 class="sec-title">主宰・担当している教室。</h2>
+          <div class="prog">
+            <div class="prog-photo"><div class="ph">PHOTO</div></div>
+            <div class="prog-head"><div class="tag">Brain &amp; Learning</div><h3>SproutUp</h3><div class="meta">0歳〜小学生 / 少人数制</div></div>
+            <div><p>五感を刺激する脳育あそびを、学びにつなげる。感覚遊び・製作・実験・調理科学を年齢に合わせて設計。小学生は「頭がよくなるお料理教室」。</p><div class="chips"><span class="chip">プラザノース（北区）</span><span class="chip">どれみリズム（大宮区）</span><span class="chip">みらいLab（見沼区）</span></div></div>
+          </div>
+          <div class="prog">
+            <div class="prog-photo"><div class="ph">PHOTO</div></div>
+            <div class="prog-head"><div class="tag">English Rhythmics</div><h3>EnglishPlaypark♪</h3><div class="meta">0〜3歳 親子 / since 2001</div></div>
+            <div><p>プロの生演奏とグランドピアノで、本物の音に触れながら英語で遊ぶ親子クラス。公共施設利用でお月謝も抑えめ。0歳クラスはおねんね撮影会つき。</p><div class="chips"><span class="chip">北区（月）</span><span class="chip">上尾市（火）</span><span class="chip">生ピアノ</span></div></div>
+          </div>
+          <div class="prog">
+            <div class="prog-photo"><div class="ph">PHOTO</div></div>
+            <div class="prog-head"><div class="tag">Community Hub</div><h3>みらいLab</h3><div class="meta">見沼区大和田 / サポーター</div></div>
+            <div><p>「好き」を見つける喜びと挑戦する勇気を育む次世代子育て支援センター。講座開催のほか、チラシ制作・予約管理を担当。</p><div class="chips"><span class="chip">講座開催</span><span class="chip">こども食堂</span><span class="chip">FMルピナス大宮</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 親子で楽しむAI -->
+    <section class="panel" id="ai1">
+      <div class="wrap" data-part="01">
+        <p class="lec-kicker">AI Lecture · Part 1</p>
+        <h2 class="lec-title">親子で楽しむAI。</h2>
+        <p class="lec-lead">AIは"正解を出す機械"ではなく、<b>一緒に考える相棒</b>。親子の「なぜ？」が、もっと楽しくなる使い方があります。</p>
+        <div class="lcards">
+          <div class="lcard" data-key="t1a" tabindex="0" role="button"><div class="n">01</div><h4>お話をつくる</h4><p>子どもの好きなキャラで、その場でお話づくり。想像力と語彙がぐんと広がります。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="t1b" tabindex="0" role="button"><div class="n">02</div><h4>「なぜ？」に一緒に</h4><p>答えを教える前に「どう思う？」。AIは調べる入口、考えるのは親子で。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="t1c" tabindex="0" role="button"><div class="n">03</div><h4>絵や音で遊ぶ</h4><p>描いた絵やアイデアを広げて、表現する楽しさを。自己肯定感にもつながります。</p><span class="tap">図解＋プロンプト</span></div>
+        </div>
+        <div class="lnote"><b>おうちの約束を3つ。</b>　使う時間／大人と一緒に／わからないことは聞く——最初にルールを決めると、安心して楽しめます。</div>
+      </div>
+    </section>
+
+    <!-- 4. AIリテラシー -->
+    <section class="panel" id="ai2">
+      <div class="wrap" data-part="02">
+        <p class="lec-kicker">AI Lecture · Part 2</p>
+        <h2 class="lec-title">AIリテラシー。</h2>
+        <p class="lec-lead">これからの子に必要なのは、<b>AIを疑い、使いこなす力</b>。まず大人が知っておきたい基本を、やさしく。</p>
+        <div class="lcards">
+          <div class="lcard" data-key="l1" tabindex="0" role="button"><div class="n">01</div><h4>AIは間違える</h4><p>それっぽい嘘（ハルシネーション）をつくることも。鵜呑みにせず"確かめる"習慣を。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="l2" tabindex="0" role="button"><div class="n">02</div><h4>入れない情報</h4><p>名前・住所・顔写真などの個人情報は入力しない。ここは大人が線引きを。</p><span class="tap">図解＋おうちルール</span></div>
+          <div class="lcard" data-key="l3" tabindex="0" role="button"><div class="n">03</div><h4>考える力は渡さない</h4><p>答えを写すのではなく、たたき台として使う。自分で考える時間を大切に。</p><span class="tap">図解＋プロンプト</span></div>
+        </div>
+        <div class="lnote"><b>合言葉は「うのみにしない」。</b>　便利だからこそ、最後に決めるのは自分。その姿勢を、日常の中で見せてあげましょう。</div>
+      </div>
+    </section>
+
+    <!-- 5. 育みたい力 -->
+    <section class="panel" id="grow">
+      <div class="wrap" data-part="03">
+        <p class="lec-kicker">AI Lecture · Part 3</p>
+        <h2 class="lec-title">AI時代に、育みたい力。</h2>
+        <p class="lec-lead">AIが答えを出せる時代。だからこそ伸ばしたいのは、<b>"答えの外側"にある力</b>。脳科学の視点から、家庭でできることを。</p>
+        <div class="manifesto" aria-label="この章のメッセージ">
+          <div class="mark">“</div>
+          <p>AIに答えをもらう力より、<br />AIの答えに「ん？」と思える力を。<small>THINKING BEGINS WITH A SMALL DISCOMFORT.</small></p>
+        </div>
+        <div class="lcards grow-grid">
+          <div class="lcard" data-key="g1" tabindex="0" role="button"><div class="n">01</div><h4>問いを立てる力</h4><p>良い問いを持てる子は、AIも使いこなせる。「どうしてだろうね」を一緒に。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="g4" tabindex="0" role="button"><div class="n">02</div><h4>違和感に気づく力</h4><p>「なんか変」「前と違う」。その小さな引っかかりが、考え始めるサインです。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="g2" tabindex="0" role="button"><div class="n">03</div><h4>自分で考え判断する力</h4><p>うのみにせず「本当？」と一度立ち止まり、比べて、確かめて、自分で選ぶ。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="g3" tabindex="0" role="button"><div class="n">04</div><h4>創造し表現する力</h4><p>0→1を生み、それを人に伝える。感覚遊び・表現遊びが土台になります。</p><span class="tap">図解＋プロンプト</span></div>
+        </div>
+        <div class="lnote"><b>違和感は、考える力の入口。</b>　すぐに正解を渡さず、「どこが変だと思った？」と言葉にする時間をつくりましょう。</div>
+      </div>
+    </section>
+
+    <!-- 6. 家事の時短AI -->
+    <section class="panel" id="ai3">
+      <div class="wrap" data-part="04">
+        <p class="lec-kicker">AI Lecture · Part 4</p>
+        <h2 class="lec-title">家事の時短AI。</h2>
+        <p class="lec-lead">がんばりすぎなくて、大丈夫。AIで生まれた余白は、<b>子どもと過ごす時間</b>に。栄養士目線の使い方も添えて。</p>
+        <div class="lcards">
+          <div class="lcard" data-key="h1" tabindex="0" role="button"><div class="n">01</div><h4>献立と買い物</h4><p>冷蔵庫の残りから献立を提案。買い物リストまで一気に。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="h2" tabindex="0" role="button"><div class="n">02</div><h4>栄養バランス相談</h4><p>「野菜が足りない日」の一品を相談。栄養士のコツもあわせて。</p><span class="tap">図解＋プロンプト</span></div>
+          <div class="lcard" data-key="h3" tabindex="0" role="button"><div class="n">03</div><h4>文章の下書き</h4><p>連絡帳・お便り・お礼メールの下書きを一瞬で。整えるのは自分。</p><span class="tap">図解＋プロンプト</span></div>
+        </div>
+        <div class="lnote"><b>時短の目的は"手抜き"じゃない。</b>　浮いた時間を、子どもの「見て見て！」に使えること。それが一番の効果です。</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="m-title">
+      <button class="modal-x" data-close aria-label="閉じる">×</button>
+      <p class="m-kicker" id="m-kicker"></p>
+      <h3 class="m-title" id="m-title"></h3>
+      <div class="m-body" id="m-body"></div>
+      <div class="m-fig" id="m-fig"></div>
+      <div class="m-plabel"><span>コピペできるプロンプト</span><button class="m-copy" id="m-copy">コピー</button></div>
+      <pre class="m-prompt" id="m-prompt"></pre>
+      <p class="m-hint"><b>【　】</b>の部分を、お子さんや状況に合わせて書き換えて使ってください。</p>
+    </div>
+  </div>
+
+  <div class="arrows"><button id="prev" aria-label="前へ">‹</button><button id="next" aria-label="次へ">›</button></div>
+  <div class="counter" id="counter">01 / 06</div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+<script>
+(function(){
+  /* ---------- diagrams ---------- */
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function flow(items){
+    var n=items.length,W=560,H=118,pad=6,gap=30;
+    var bw=(W-pad*2-gap*(n-1))/n,bh=58,y=(H-bh)/2,s='';
+    s+='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" font-family="Zen Kaku Gothic New, sans-serif">';
+    for(var i=0;i<n;i++){
+      var x=pad+i*(bw+gap);
+      s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+bh+'" rx="9" fill="#fff" stroke="#1F4A38" stroke-width="1.4"/>';
+      s+='<text x="'+(x+bw/2)+'" y="'+(y+bh/2+5)+'" text-anchor="middle" font-size="15" fill="#1A1A16" font-weight="500">'+esc(items[i])+'</text>';
+      if(i<n-1){var ax=x+bw;s+='<line x1="'+(ax+6)+'" y1="'+(H/2)+'" x2="'+(ax+gap-8)+'" y2="'+(H/2)+'" stroke="#BF6440" stroke-width="1.6"/><path d="M'+(ax+gap-8)+' '+(H/2)+' l-8 -4 v8 z" fill="#BF6440"/>';}
+    }
+    return s+'</svg>';
+  }
+  function compare(a,b){
+    var W=560,H=150,cw=250,y=18,ch=114,x2=W-cw;
+    function col(x,c,mark,tag,txt){
+      var s='<rect x="'+x+'" y="'+y+'" width="'+cw+'" height="'+ch+'" rx="9" fill="#fff" stroke="'+c+'" stroke-width="1.4"/>';
+      s+='<text x="'+(x+22)+'" y="'+(y+40)+'" font-size="26" fill="'+c+'" font-weight="700">'+mark+'</text>';
+      s+='<text x="'+(x+54)+'" y="'+(y+40)+'" font-size="16" fill="#1A1A16" font-weight="700" font-family="Zen Old Mincho, serif">'+esc(tag)+'</text>';
+      s+='<text x="'+(x+22)+'" y="'+(y+76)+'" font-size="13.5" fill="#44433a">'+esc(txt)+'</text>';
+      return s;
+    }
+    return '<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" font-family="Zen Kaku Gothic New, sans-serif">'
+      +col(0,'#B7A79A','✕',a.tag,a.txt)+col(x2,'#1F4A38','✓',b.tag,b.txt)+'</svg>';
+  }
+
+  /* ---------- content ---------- */
+  var D={
+    t1a:{k:'AI with Kids · 01',t:'お話をつくる',
+      body:'子どもが主人公・場所・登場する動物を決めて、AIに続きを作ってもらいます。語彙が増え、物語の組み立て（起承転結）の感覚が自然に育ちます。ポイントは、途中で止めて「次どうなると思う？」と<b>子どもに委ねる</b>こと。AIに全部作らせず、想像するすきまを残します。',
+      fig:flow(['子どもが決める','AIがお話','続きを想像']),
+      p:'小さな子ども向けに、やさしい短いお話を作ってください。\n主人公は【子どもの名前や好きな動物】、舞台は【場所】です。\n3〜4文ずつで区切り、続きを子どもが想像したくなる問いかけを入れて一度止めてください。\nむずかしい言葉は使わないでください。'},
+    t1b:{k:'AI with Kids · 02',t:'「なぜ？」に一緒に',
+      body:'子どもの「どうして空は青いの？」に、AIを<b>調べる入口</b>として使います。すぐ答えを見せず、まず「どう思う？」と予想させてから、AIの説明を親子で確かめる。この“予想→確認”が、脳の考える回路をよく使います。',
+      fig:flow(['問い','予想する','AIで確かめる']),
+      p:'6歳の子どもが『【子どもの質問】』と聞いてきました。\nまず、子どもが自分で予想したくなるヒントを一つ出してください。\nそのあとに、幼児にもわかる言葉で、身近な例えを使ってやさしく説明してください。\n専門用語は避けてください。'},
+    t1c:{k:'AI with Kids · 03',t:'絵や音で遊ぶ',
+      body:'子どもが描いた絵や思いついた世界を言葉にして、AIに広げてもらいます。「思いついたことが、かたちになる」体験は、<b>表現する楽しさ</b>と自己肯定感につながります。',
+      fig:flow(['感じる','思いつく','かたちに','もっと！']),
+      p:'子どもが『【描いたもの・思いついたもの】』を考えました。\nこの子のアイデアをまずほめたうえで、そこから発展させて遊べるアイデアを3つ、簡単な言葉で提案してください。\nおうちにあるもので出来る範囲でお願いします。'},
+    l1:{k:'AI Literacy · 01',t:'AIは間違える',
+      body:'AIは、事実でないことを<b>自信満々に</b>言うことがあります（ハルシネーション）。だからこそ「確かめる」習慣が大切。子どもには「AIくんも間違えるんだよ、だから確かめようね」と伝えると、うのみにしない姿勢が育ちます。',
+      fig:flow(['AIの答え','ほんと？','別で確認']),
+      p:'次のAIの回答について、事実として不確かな点・確認したほうがよい点を挙げてください。\nそのうえで、正しいかどうかを自分で確かめる方法（調べ方）も教えてください。\n\n回答：【AIの答えをここに貼る】'},
+    l2:{k:'AI Literacy · 02',t:'入れない情報',
+      body:'名前・住所・顔写真・学校名などの<b>個人情報は入力しない</b>——ここは大人が線引きする部分です。「一般的な質問はOK、自分や家族のことはNG」と、家庭でルールにしておくと安心。右のルールはそのままコピーして貼っておけます。',
+      fig:compare({tag:'入れないで',txt:'名前・住所・顔写真・学校名'},{tag:'入れてOK',txt:'一般的な質問・調べもの'}),
+      p:'【わが家のAIルール】\n1. 名前・住所・顔写真・学校名は入れない\n2. 使うときは大人といっしょに\n3. 「変だな」と思ったら大人に聞く\n4. AIの答えは“ひとつの意見”として受けとる'},
+    l3:{k:'AI Literacy · 03',t:'考える力は渡さない',
+      body:'答えを丸写しするのではなく、<b>たたき台</b>として使う。自分の頭で考える時間を守ることが、AI時代の学びの核です。宿題や自由研究では「答えは書かせず、考えを深める質問をもらう」使い方がおすすめ。',
+      fig:compare({tag:'丸写し',txt:'考える時間がゼロに'},{tag:'たたき台',txt:'自分で考えて仕上げる'}),
+      p:'私が取り組む【作文／自由研究】のテーマについて、答えは書かないでください。\n代わりに、自分で考えを深められる質問を5つ投げかけてください。\nヒントは出しても、結論やまとめは言わないでください。\n\nテーマ：【テーマをここに】'},
+    g1:{k:'Skills to Grow · 01',t:'問いを立てる力',
+      body:'AIは「良い問い」を渡せる人ほど、うまく使えます。日常の中で「どうしてだろうね」「他にはどんなやり方があるかな」と、<b>問いを一緒に育てる</b>。答えを急がない会話が、質問力を伸ばします。',
+      fig:compare({tag:'覚える（旧）',txt:'答えを暗記する'},{tag:'問う（新）',txt:'良い問いを立てる'}),
+      p:'6歳の子どもの「問いを立てる力（質問する力）」を育てたいです。\n日常生活の中で、自然に投げかけられる“考えるきっかけの質問”を10個、\nどんな場面で使えるかの具体例つきで提案してください。'},
+    g4:{k:'Skills to Grow · 02',t:'違和感に気づく力',
+      body:'AIの答えを見て「なんか変」「前に知っていたことと違う」と立ち止まれる力です。違和感は、脳が情報のずれを捉え、<b>考え始めようとしているサイン</b>。すぐ正解を教えず、「どこが変だと思った？」と引っかかりを言葉にすると、比較・確認・判断へつながります。',
+      fig:flow(['AIの答え','ん？と立ち止まる','比べて確かめる']),
+      p:'次の説明を、6歳の子どもと一緒に確かめたいです。\n\n説明：【AIの答えをここに貼る】\n\nすぐに正解を教えず、\n「どこか変なところはあるかな？」\n「前に知っていたことと違うところはあるかな？」\nと、子どもが違和感に気づける質問を3つ出してください。\n\nそのあとに、親子で確かめる方法を教えてください。'},
+    g2:{k:'Skills to Grow · 03',t:'自分で考え判断する力',
+      body:'情報をうのみにせず「本当かな？」と一度立ち止まる。この一拍が、脳の<b>前頭前野</b>（考える・抑える司令塔）をよく使います。答えをすぐ与えず、考えさせる声かけを積み重ねましょう。',
+      fig:flow(['受け取る','立ち止まる','自分で判断']),
+      p:'子どもの「自分で考えて判断する力」を育てる、親子の会話のコツを教えてください。\n答えをすぐ教えずに考えさせる声かけの例を5つと、つい言いがちな“避けたいNGワード”を、\n具体例つきで挙げてください。'},
+    g3:{k:'Skills to Grow · 04',t:'創造し表現する力',
+      body:'まだ無いものを思いつく力（0→1）と、それを人に伝える力。感覚遊びや表現遊びが、その土台になります。「上手／下手」で評価せず、<b>思いついたこと自体をほめる</b>のがコツです。',
+      fig:flow(['感じる','思いつく','かたちに','伝える']),
+      p:'家庭でできる、子どもの「創造力と表現力」を伸ばす遊びを、\n【○歳】向けに5つ提案してください。\n特別な道具は使わず、身近なもので出来るものを、\nそれぞれ“どんな力が育つか（ねらい）”つきでお願いします。'},
+    h1:{k:'AI at Home · 01',t:'献立と買い物',
+      body:'「今日、何にしよう」から解放されます。冷蔵庫の残りものを伝えれば、<b>栄養バランス</b>を考えた献立と、足りない食材の買い物リストまで一気に。',
+      fig:flow(['残り食材','AIが提案','献立＋買い物']),
+      p:'冷蔵庫に【残っている食材】があります。\nこれを使って、栄養バランスのとれた夕食の献立を3案、作り方の要点つきで提案してください。\nあわせて、足りない食材の買い物リストも作ってください。\n子どもも食べやすい味つけでお願いします。'},
+    h2:{k:'AI at Home · 02',t:'栄養バランス相談',
+      body:'栄養士の視点を、AIにも手伝ってもらいます。最近の食事の偏りを伝えれば、<b>不足しがちな栄養素</b>と、無理なく補える一品を提案。忙しい日の“あと一品”に。',
+      fig:flow(['偏りを伝える','不足を特定','一品で補う']),
+      p:'最近の食事が【最近よく食べているもの】に偏りがちです。\n栄養士の視点で、不足しがちな栄養素と、無理なく補える簡単な一品を3つ教えてください。\n子どもも食べやすい味つけで、平日でも作れる手軽さでお願いします。'},
+    h3:{k:'AI at Home · 03',t:'文章の下書き',
+      body:'連絡帳・お便り・お礼メール——ゼロから書くと時間がかかる文章も、下書きは一瞬。<b>整えるのは自分</b>で、あたたかい一言を足せば、ちょうどいい距離感に。',
+      fig:flow(['要点を伝える','AIが下書き','自分で整える']),
+      p:'【連絡帳／お便り／お礼メール】の下書きを作ってください。\n相手は【先生／ママ友など】、伝えたいことは【内容】です。\nていねいすぎず、あたたかい印象で、3〜4文にまとめてください。'}
+  };
+
+  /* ---------- modal ---------- */
+  var modal=document.getElementById('modal');
+  var lastFocus=null;
+  var elK=document.getElementById('m-kicker'),elT=document.getElementById('m-title'),
+      elB=document.getElementById('m-body'),elF=document.getElementById('m-fig'),
+      elP=document.getElementById('m-prompt'),elC=document.getElementById('m-copy');
+  function openModal(key){
+    var d=D[key]; if(!d)return;
+    lastFocus=document.activeElement;
+    elK.textContent=d.k; elT.textContent=d.t; elB.innerHTML=d.body; elF.innerHTML=d.fig; elP.textContent=d.p;
+    elC.textContent='コピー'; elC.classList.remove('done');
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    modal.querySelector('.modal-x').focus();
+  }
+  function closeModal(){
+    modal.classList.remove('open');modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+  modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))closeModal();});
+  elC.addEventListener('click',function(){
+    var txt=elP.textContent;
+    function ok(){elC.textContent='コピーしました ✓';elC.classList.add('done');setTimeout(function(){elC.textContent='コピー';elC.classList.remove('done');},1800);}
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fallback);}
+      else fallback();
+    }catch(e){fallback();}
+    function fallback(){
+      try{var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}
+      catch(e2){elC.textContent='下の文を選択してコピー';}
+    }
+  });
+  document.querySelectorAll('.lcard').forEach(function(c){
+    c.addEventListener('click',function(){openModal(c.dataset.key);});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(c.dataset.key);}});
+  });
+
+  /* ---------- tabs / slides ---------- */
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var counter=document.getElementById('counter');
+  var progress=document.getElementById('progress');
+  var viewToggle=document.getElementById('view-toggle');
+  var order=tabs.map(function(t){return t.dataset.panel;});
+  function setHash(name){try{if(history&&history.replaceState)history.replaceState(null,'','#'+name);}catch(e){}}
+  function getHash(){try{return (location.hash||'').replace('#','');}catch(e){return '';}}
+  function show(name,push){
+    if(name==='faq')name='about';
+    var i=order.indexOf(name); if(i<0){i=0;name=order[0];}
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.panel===name?'true':'false');});
+    panels.forEach(function(p){p.classList.toggle('active',p.id===name);});
+    counter.textContent=String(i+1).padStart(2,'0')+' / '+String(order.length).padStart(2,'0');
+    progress.style.width=((i+1)/order.length*100)+'%';
+    window.scrollTo({top:0,behavior:'auto'});
+    if(push)setHash(name);
+  }
+  function current(){var a=document.querySelector('.tab[aria-selected="true"]');return a?a.dataset.panel:order[0];}
+  function step(d){var i=order.indexOf(current())+d;if(i<0)i=order.length-1;if(i>=order.length)i=0;show(order[i],true);}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.panel,true);});});
+  viewToggle.addEventListener('click',function(){
+    var on=document.body.classList.toggle('presenting');
+    viewToggle.setAttribute('aria-pressed',on?'true':'false');
+    viewToggle.textContent=on?'通常表示':'投影モード';
+  });
+  document.getElementById('next').addEventListener('click',function(){step(1);});
+  document.getElementById('prev').addEventListener('click',function(){step(-1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){if(modal.classList.contains('open'))closeModal();return;}
+    if(modal.classList.contains('open'))return;
+    if(e.target&&e.target.tagName==='SUMMARY')return;
+    if(e.key==='ArrowRight'||e.key==='PageDown')step(1);
+    else if(e.key==='ArrowLeft'||e.key==='PageUp')step(-1);
+  });
+  var h=getHash();
+  show(order.indexOf(h)>=0?h:order[0],false);
+})();
+</script>
+</body>
+</html>
